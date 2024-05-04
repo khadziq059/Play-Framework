@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Mahasiswa</title>
+</head>
+<body>
+    <a href="viewMhs" class="button">Kembali</a>
+    <h1>Edit Mahasiswa</h1>
+    <form action="@{Application.simpanMhs()}">
+        <label for="nama">Nama</label>
+        <input type="text" name="mahasiswaku.nama" id="nama" value="${z.nama}">
+        <label for="password">Password</label>
+        <input type="password" name="mahasiswaku.password" id="password" value="${z.password}">
+        <label for="nim">Nim</label>
+        <input type="text" name="mahasiswaku.nim" id="nim" value="${z.nim}">
+        <label for="alamat">Alamat</label>
+        <input type="text" name="mahasiswaku.alamat" id="alamat" value="${z.alamat}">
+        <input type="hidden" name="mahasiswaku.id" value="${z.id}">
+        <input type="submit" value="Simpan">
+    </form>
+
+</body>
+</html>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #3e8e41;
+    }
+
+    .button {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .button:hover {
+        background-color: #005ec3;
+    }
+</style>
+

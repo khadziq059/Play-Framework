@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahasiswa</title>
+</head>
+<body>
+    <a href="viewPeminjaman" class="button" id="link">Ke Tabel Peminjaman</a>
+    <a href="index" class="button" id="link">Kembali Ke halaman awal</a>
+    <h1>Tabel Mahasiswa</h1>
+    <form action="@{Application.baruMhs()}">
+        <input type="submit" value="Input Baru" class="button">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
+        <tbody>
+            #{list items:daftar, as:'x'}
+            <tr>
+                <td>${x.nim}</td>
+                <td>${x.nama}</td>
+                <td>${x.alamat}</td>
+                <td>
+                    <a href="@{Application.editMhs(x.id)}" class="button">Update</a>
+                    <a href="@{Application.deleteMhs(x.id)}" class="button" id="del">Delete</a>
+                </td>
+            </tr>
+            #{/list}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    #link {
+        background-color: #007bff;
+    }
+
+    #link:hover {
+        background-color: #005ec3;
+    }
+
+    #del {
+        background-color: #f42719;
+    }
+    #del:hover {
+        background-color: #c50e01;
+    }
+
+    .button:hover {
+        background-color: #3e8e41;
+    }
+</style>
+
+
